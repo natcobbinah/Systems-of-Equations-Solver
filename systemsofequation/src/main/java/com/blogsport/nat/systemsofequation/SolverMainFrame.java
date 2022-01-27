@@ -47,24 +47,22 @@ public class SolverMainFrame extends JFrame {
 		windowMenu.add(manualmenuItem);
 		menuBar.add(fileMenu);
 		menuBar.add(windowMenu);
-		exitItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				int action = JOptionPane.showConfirmDialog(SolverMainFrame.this,
-						"Do you really want to exit the application?", "Confirm Exit", 2);
-				if (action == 0)
-					System.exit(0);
-			}
+
+		exitItem.addActionListener((ActionEvent e) -> {
+			int action = JOptionPane.showConfirmDialog(SolverMainFrame.this,
+					"Do you really want to exit the application?", "Confirm Exit", 2);
+			if (action == 0)
+				System.exit(0);
 		});
-		aboutmenuItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				SolverMainFrame.this.about = new About();
-			}
+
+		aboutmenuItem.addActionListener((ActionEvent e) -> {
+			SolverMainFrame.this.about = new About();
 		});
-		manualmenuItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				SolverMainFrame.this.manual = new Manual();
-			}
+
+		manualmenuItem.addActionListener((ActionEvent e) -> {
+			SolverMainFrame.this.manual = new Manual();
 		});
+
 		return menuBar;
 	}
 }

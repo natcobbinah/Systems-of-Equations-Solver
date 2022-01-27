@@ -41,16 +41,13 @@ public class About extends JFrame {
 		Border compoundBorder = BorderFactory.createCompoundBorder(outerBorder, innerBorder);
 		this.txtarea = new JTextArea(15, 1);
 		this.txtarea.setBackground(Color.WHITE);
-		
-		StringBuilder aboutMsg = new StringBuilder()
-								.append("Version 1.0\n")
-								.append("Author: Nathaniel Cobbinah\n")
-								.append("Email:fmg3ckali@gmail.com\nEmail2:baby.hugo74@yahoo.com\n")
-								.append("(c) Copyright Tank Contributors and Others 2020\n")
-								.append("All rights reserved.\n")
-								.append("This Systems of Equations Calculator Support as many unknown\n")
-								.append("as can be computed on the supported system");
-		
+
+		StringBuilder aboutMsg = new StringBuilder().append("Version 1.0\n").append("Author: Nathaniel Cobbinah\n")
+				.append("Email:fmg3ckali@gmail.com\nEmail2:baby.hugo74@yahoo.com\n")
+				.append("(c) Copyright Tank Contributors and Others 2020\n").append("All rights reserved.\n")
+				.append("This Systems of Equations Calculator Support as many unknown\n")
+				.append("as can be computed on the supported system");
+
 		this.txtarea.setEditable(false);
 		this.font = new Font("Monospace", 0, 11);
 		this.txtarea.setFont(this.font);
@@ -59,11 +56,11 @@ public class About extends JFrame {
 		this.infopanel.add(this.txtarea);
 		this.infopanel.setBackground(Color.red);
 		this.closebutton = new JButton("Close");
-		this.closebutton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				About.this.setVisible(false);
-			}
+
+		this.closebutton.addActionListener((ActionEvent e) -> {
+			About.this.setVisible(false);
 		});
+		
 		this.closepanel = new JPanel();
 		this.closepanel.add(this.closebutton);
 		this.closepanel.setLayout(new FlowLayout(2));
